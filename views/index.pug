@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1= title
+    div.list
+    p Welcome to #{title}
+    script.
+        $(function(){
+            $.ajax({
+                url:'/api/getIndex',
+                success:function(res){
+                    console.log(res);
+                    $('.list').html(res.msg)
+                }
+            });
+        })
