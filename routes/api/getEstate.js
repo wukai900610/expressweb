@@ -13,7 +13,8 @@ async function getList(kw) {
     let $ = cheerio.load(result);
     let itemData = [];
     $('.houselist-mod-new .list-item').each(function () {
-        let title = $(this).find('.house-title a').text();
+        let title = $(this).find('.houseListTitle').text();
+        let link = $(this).find('.houseListTitle').attr('href');
         let details = [];
         details[0] = $(this).find('.details-item').eq(0).find('span').eq(0).text();
         details[1] = $(this).find('.details-item').eq(0).find('span').eq(1).text();
@@ -24,6 +25,7 @@ async function getList(kw) {
         let unitPrice = $(this).find('.unit-price').text();
         itemData.push({
             title:title.trim(),
+            link:link,
             details:details,
             adress:adress.trim().split('\n').map(item=>{return item.trim()}),
             price:price,
@@ -42,9 +44,10 @@ async function getList(kw) {
 router.get('/',async function(req, res, next) {
     // let page = req.query.page || 1;
     // let pagesize = req.query.pagesize || 25;
+    data = [];
     let kw = req.query.kw;
-    // let result=await util.myHttps('https://nanjing.anjuke.com/sale/rd1/?kw=&from=sugg');
     // let result=await util.myHttps('https://nanjing.anjuke.com/sale/jiangninga/rd1/');
+    // console.log(kw);
     await getList(kw);
     res.send({
         data:data

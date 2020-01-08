@@ -3,8 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var bodyParser = require('body-parser');
 
 var app = express();
+
+// 解析Post参数
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,6 +27,9 @@ app.use('/users', require('./routes/users'));
 
 app.use('/api/getIndex', require('./routes/api/getIndex'));
 app.use('/api/getEstate', require('./routes/api/getEstate'));
+app.use('/api/getDDdata', require('./routes/api/getDDdata'));
+app.use('/api/DDlogin', require('./routes/api/DDlogin'));
+app.use('/api/postIndex', require('./routes/api/postIndex'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
