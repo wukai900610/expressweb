@@ -40,7 +40,6 @@ async function getList(kw) {
     // }
 }
 
-/* GET home page. */
 router.get('/',async function(req, res, next) {
     // let page = req.query.page || 1;
     // let pagesize = req.query.pagesize || 25;

@@ -1,0 +1,37 @@
+extends layout
+
+block content
+    h1= title
+    //- a(href="dingtalk://dingtalkclient/action/sendmsg?dingtalk_id=wukai900610")=123
+    script(src='https://g.alicdn.com/dingding/dingtalk-jsapi/2.7.13/dingtalk.open.js')
+    script.
+        let config = {
+            corpId:'dingb49e03419a3d675cf2c783f7214b6d69',
+        }
+        $(function(){
+            dd.ready(function() {
+                // dd.ready参数为回调函数，在环境准备就绪时触发，jsapi的调用需要保证在该回调函数触发后调用，否则无效。
+                dd.runtime.permission.requestAuthCode({
+                    corpId:config.corpId,
+                    onSuccess:function(result) {
+                        $.ajax({
+                            url:'/api/dd/user',
+                            data:{
+                                code:result.code,
+                            },
+                            success:function(res){
+                                $('body').append(JSON.stringify(res));
+                                
+                                //- 直接返回已存储的token
+                                $.ajax({
+                                    url:'/api/dd/userDetail',
+                                    success:function(res){
+                                    }
+                                });
+                            }
+                        });
+                    },
+                    onFail:function(err) {}
+                });
+            });
+        });

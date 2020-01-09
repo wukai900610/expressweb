@@ -21,15 +21,23 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// page
 app.use('/', require('./routes/index'));
 app.use('/estate', require('./routes/estate'));
 app.use('/users', require('./routes/users'));
+app.use('/ding', require('./routes/ding'));
 
+// other
 app.use('/api/getIndex', require('./routes/api/getIndex'));
 app.use('/api/getEstate', require('./routes/api/getEstate'));
-app.use('/api/getDDdata', require('./routes/api/getDDdata'));
-app.use('/api/DDlogin', require('./routes/api/DDlogin'));
+
+// test
 app.use('/api/postIndex', require('./routes/api/postIndex'));
+
+// ding接口
+app.use('/api/dd/user', require('./routes/api/dd/user'));
+app.use('/api/dd/userDetail', require('./routes/api/dd/userDetail'));
+app.use('/api/dd/login', require('./routes/api/dd/login'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
