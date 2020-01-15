@@ -1,8 +1,35 @@
 var http = require('http');
 var https = require('https');
+var multiparty = require('multiparty');
+var fs = require('fs');
 
 let storageData = {};
 const util = {
+    upFile:function (req, res, next, callback) {
+        var form = new multiparty.Form();
+
+        form.parse(req, function(err, fields, files) {
+            // console.log(files);
+            var filesTemp = JSON.stringify(files, null, 2);
+            if (err) {
+                console.log('parse error:' + err);
+            } else {
+                // console.log('parse files:' + filesTemp);
+                var file = files.uploadFile[0];
+                var uploadedPath = file.path;
+                var dstPath = './upload/' + file.originalFilename;
+                //重命名为真实文件名
+                var readStream = fs.createReadStream(uploadedPath);
+                var writeStream = fs.createWriteStream(dstPath);
+                readStream.pipe(writeStream);
+                readStream.on('end', function() {
+                    fs.unlinkSync(uploadedPath);
+
+                    callback(res);
+                });
+            }
+        });
+    },
     myHttp: function(url, config) {
         config = config || {};
         let options = {

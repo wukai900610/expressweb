@@ -18,8 +18,14 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser('secret'));
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+app.use(function (req, res, next) {
+    // console.log(req.signedCookies.name);
+    next();
+});
 
 // page
 app.use('/', require('./routes/index'));
@@ -33,11 +39,12 @@ app.use('/api/getEstate', require('./routes/api/getEstate'));
 
 // test
 app.use('/api/postIndex', require('./routes/api/postIndex'));
+app.use('/api/upFile', require('./routes/api/upFile'));
 
 // ding接口
 app.use('/api/dd/user', require('./routes/api/dd/user'));
 app.use('/api/dd/userDetail', require('./routes/api/dd/userDetail'));
-app.use('/api/dd/login', require('./routes/api/dd/login'));
+// app.use('/api/dd/login', require('./routes/api/dd/login'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -4,6 +4,8 @@ block content
     h1= title
     div.list
     p Welcome to #{title}
+    input.upload(type="file")
+    button.upBtn 上传
     script.
         $(function(){
             $.ajax({
@@ -12,5 +14,26 @@ block content
                     console.log(res);
                     $('.list').html(res.msg)
                 }
+            });
+            
+            $('.upBtn').click(function () {
+                var uploadFile = $('.upload')[0].files[0];
+                var formData = new FormData();
+                formData.append('date',new Date().toLocaleString()); 
+                formData.append("uploadFile",uploadFile);
+                
+                //- console.log(img);
+                $.ajax({
+                    method:'post',
+                    contentType: false,
+                    processData: false,
+                    url:'/api/upFile',
+                    data:formData,
+                    success:function(res){
+                        if(res.code == 0){
+                            alert(res.msg);
+                        }
+                    }
+                });
             });
         })
