@@ -32,6 +32,7 @@ app.use('/', require('./routes/index'));
 app.use('/estate', require('./routes/estate'));
 app.use('/users', require('./routes/users'));
 app.use('/ding', require('./routes/ding'));
+app.use('/trip', require('./routes/trip'));
 
 // other
 app.use('/api/getIndex', require('./routes/api/getIndex'));

@@ -14,10 +14,10 @@ block content
                     url:'/api/getEstate?kw=' + keyword,
                     success:function(res){
                         //- console.log(res.data);
-                        //- var lowPriceArr = res.data;
-                        var lowPriceArr = res.data.filter(item=>{
-                            return parseInt(item.unitPrice)<20000
-                        })
+                        var lowPriceArr = res.data;
+                        //- var lowPriceArr = res.data.filter(item=>{
+                        //-     return parseInt(item.unitPrice)<20000
+                        //- })
                         lowPriceArr.map(item=>{
                             console.log(item.title+'--'+'price:'+item.price+'--unitPrice:'+item.unitPrice+'--area:'+item.details[0]+','+item.details[1]+',链接:'+item.link);
                         });

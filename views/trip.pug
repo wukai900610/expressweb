@@ -1,0 +1,52 @@
+extends layout
+
+block content
+    style.
+        *{
+            margin:0;
+            padding:0;
+        }
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px
+        }
+
+        #container {
+            height: 100%
+        }
+    h1= title
+    div#container
+    script(src='http://api.map.baidu.com/api?v=3.0&ak=YaWWufG2X07BkHnw7igAiGNlv2fNP4if')
+    script.
+        $(function(){
+            var map = new BMap.Map("container");
+            // 创建地图实例
+            var point = new BMap.Point(116.404, 39.915);
+            // 创建点坐标
+            map.centerAndZoom(point, 6);
+            map.enableScrollWheelZoom(true);
+            // 初始化地图，设置中心点坐标和地图级别
+    
+            function setMarker(adress) {
+                var myGeo = new BMap.Geocoder();
+                // 将地址解析结果显示在地图上,并调整地图视野
+                myGeo.getPoint(adress, function(point) {
+                    if (point) {
+                        var marker = new BMap.Marker(point); // 创建标注
+                        map.addOverlay(marker); // 将标注添加到地图中
+                        marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+                    } else {
+                        alert("您选择地址没有解析到结果!");
+                    }
+                })
+            }
+            var adressArr = ['杭州西湖','杭州湘湖','杭州萧山','嘉兴市乌镇','安徽芜湖方特水上乐园','连云港连岛','舟山朱家尖','常州中华恐龙园','常州嬉戏谷','常州春秋淹城','溧阳天目湖','溧阳南山竹海','宜兴龙背山公园','南京高淳老街','南京海底世界乐园','苏州寒山寺','苏州山塘街'];
+            adressArr.map(function (item) {
+                setMarker(item);
+            });
+        })

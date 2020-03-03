@@ -6,23 +6,57 @@ block content
     p Welcome to #{title}
     input.upload(type="file")
     button.upBtn 上传
+    style.
+        p{
+            user-select:none;
+            -webkit-user-select:none;
+            -ms-user-select:none; /*IE10*/
+            -khtml-user-select:none;
+            -moz-user-select:none;
+        }
     script.
+        //- document.oncontextmenu=new Function("event.returnValue=false");  
+        document.onselectstart=new Function("event.returnValue=false");  
         $(function(){
             $.ajax({
                 url:'/api/getIndex',
                 success:function(res){
-                    console.log(res);
                     $('.list').html(res.msg)
                 }
             });
             
+            //- function createFileChunk(file,length) {
+            //-     var fileChunkList = [];
+            //-     var chunkSize = Math.ceil(file.byteLength / length);
+            //-     var cur = 0;
+            //-     while (cur < file.byteLength) {
+            //-         fileChunkList.push({ file: file.slice(cur, cur + chunkSize) });
+            //-         cur += chunkSize;
+            //-     }
+            //-     return fileChunkList;
+            //- }
+            
             $('.upBtn').click(function () {
-                var uploadFile = $('.upload')[0].files[0];
+                var file = $('.upload')[0].files[0];
                 var formData = new FormData();
                 formData.append('date',new Date().toLocaleString()); 
-                formData.append("uploadFile",uploadFile);
+                formData.append("uploadFile",file);
+                //- console.log($('.upload')[0].files);
+                //- var reader = new FileReader();
+                //- reader.readAsArrayBuffer(file);
+                //- reader.addEventListener("load", function(e) {
+                //-     var fileChunks = createFileChunk(e.target.result,12);
+                //-     //- fileChunks.map(function (item,index) {
+                //-     //-     console.log(item);
+                //-     //-     formData.append("uploadFile"+index,item.file);
+                //-     //- });
+                //-     formData.append("uploadFile",fileChunks[0].file);
+                //-     console.log(fileChunks[0].file);
+                //-     return false;
+                //- });
                 
-                //- console.log(img);
+                //- return false;
+                
                 $.ajax({
                     method:'post',
                     contentType: false,
@@ -35,5 +69,6 @@ block content
                         }
                     }
                 });
+                
             });
         })
