@@ -31,6 +31,7 @@ app.use(function (req, res, next) {
 app.use('/', require('./routes/index'));
 app.use('/estate', require('./routes/estate'));
 app.use('/users', require('./routes/users'));
+app.use('/sendFile', require('./routes/sendFile'));
 app.use('/ding', require('./routes/ding'));
 app.use('/trip', require('./routes/trip'));
 
