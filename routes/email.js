@@ -3,11 +3,11 @@ var nodemailer = require('nodemailer');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-
     const smtpTransport = nodemailer.createTransport({
         // service: 'smtp.qq.com',
-        service: 'smtp.163.com',
-        port:25,
+        service: 'smtp.126.com',
+        port:465,
+        secure:true,
         auth: {
             // user: '744982965@qq.com',
             // pass: 'oyyzmsjrrooibcjd',//注：此处为授权码，并非邮箱密码
@@ -17,12 +17,15 @@ router.get('/', function(req, res, next) {
     });
 
     smtpTransport.sendMail({
-        from    : 'wukai900610@126.com',//发件人邮箱
-        to      : '744982965@qq.com',//收件人邮箱，多个邮箱地址间用','隔开
+        from : 'wukai900610@126.com',//发件人邮箱
+        to : '744982965@qq.com',//收件人邮箱，多个邮箱地址间用','隔开
         subject : 'title',//邮件主题
         text: 'Hi!'//text和html两者只支持一种
-    }, function(err, res) {
-        console.log(err, res);
+    }, function(err, d) {
+        res.send({
+            err:err,
+            res:d
+        });
     });
 
     // var transporter = nodemailer.createTransport({
@@ -57,9 +60,9 @@ router.get('/', function(req, res, next) {
     //
     // });
 
-    res.render('email', {
-        title: 'email'
-    });
+    // res.render('email', {
+    //     title: 'email'
+    // });
 });
 
 module.exports = router;
