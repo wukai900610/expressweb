@@ -34,6 +34,8 @@ app.use('/users', require('./routes/users'));
 app.use('/sendFile', require('./routes/sendFile'));
 app.use('/ding', require('./routes/ding'));
 app.use('/trip', require('./routes/trip'));
+app.use('/paseFile', require('./routes/paseFile'));//解析文件
+app.use('/email', require('./routes/email'));
 
 // other
 app.use('/api/getIndex', require('./routes/api/getIndex'));
@@ -41,7 +43,7 @@ app.use('/api/getEstate', require('./routes/api/getEstate'));
 
 // test
 app.use('/api/postIndex', require('./routes/api/postIndex'));
-app.use('/api/upFile', require('./routes/api/upFile'));
+app.use('/apis/upFile', require('./routes/api/upFile'));
 
 // ding接口
 app.use('/api/dd/user', require('./routes/api/dd/user'));

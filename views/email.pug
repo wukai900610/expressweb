@@ -1,0 +1,34 @@
+extends layout
+
+block content
+    h1= title
+    div.email
+        div
+            input.email(type="text" value="744982965@qq.com")
+        div
+            input.name(type="text")
+        div
+            input.text(type="text")
+    button.upBtn 发送
+    div.status 123
+    style.
+        p{
+            user-select:none;
+            -webkit-user-select:none;
+            -ms-user-select:none; /*IE10*/
+            -khtml-user-select:none;
+            -moz-user-select:none;
+        }
+    script.
+        $(function(){
+            
+            
+            $('.upBtn').click(function () {
+                //- $.ajax({
+                //-     url:'/api/getIndex',
+                //-     success:function(res){
+                //-         $('.list').html(res.msg)
+                //-     }
+                //- });
+            });
+        })
