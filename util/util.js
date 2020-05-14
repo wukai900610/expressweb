@@ -5,9 +5,14 @@ var fs = require('fs');
 
 let storageData = {};
 const util = {
+    mkdir:function (dir) {
+        if(!fs.existsSync(dir)){
+            fs.mkdirSync(dir)
+        }
+    },
     upFile: function(req, res, next, callback) {
         var form = new multiparty.Form();
-
+        var UPLOAD_DIR = './upload/'
         form.parse(req, function(err, fields, files) {
             // console.log(files);
             var filesTemp = JSON.stringify(files, null, 2);
