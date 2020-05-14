@@ -34,7 +34,7 @@ app.use('/users', require('./routes/users'));
 app.use('/sendFile', require('./routes/sendFile'));
 app.use('/ding', require('./routes/ding'));
 app.use('/trip', require('./routes/trip'));
-app.use('/paseFile', require('./routes/paseFile'));//解析文件
+app.use('/paseFile', require('./routes/parseFile/'));//解析文件
 app.use('/email', require('./routes/email'));
 
 // other
