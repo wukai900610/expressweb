@@ -22,7 +22,8 @@ const util = {
                 // console.log('parse files:' + filesTemp);
                 var file = files.uploadFile[0];
                 var uploadedPath = file.path;
-                var dstPath = './upload/' + file.originalFilename;
+                util.mkdir(UPLOAD_DIR);
+                var dstPath = UPLOAD_DIR + file.originalFilename;
                 //重命名为真实文件名
                 var readStream = fs.createReadStream(uploadedPath);
                 var writeStream = fs.createWriteStream(dstPath);
