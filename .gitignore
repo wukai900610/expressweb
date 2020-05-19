@@ -8,3 +8,5 @@ yarn-error.log*
 /test/e2e/reports/
 selenium-debug.log
 upload/
+routes/parseFile/c.txt
+routes/parseFile/cFormat.json
