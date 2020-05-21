@@ -7,6 +7,5 @@ yarn-error.log*
 /test/e2e/reports/
 selenium-debug.log
 upload/
-dist/
 routes/parseFile/ccc.txt
 routes/parseFile/cFormat.json

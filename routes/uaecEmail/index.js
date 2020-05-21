@@ -2,45 +2,11 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 var util = require('../../util/util.js');
+var config = require('./config.js');
 
 router.get('/', function(req, res, next) {
-    let yearMonthDay = 'nigeria-tool-doczj'
-    let obj = [
-        {
-            key:'offlineUrl',
-            value:'www.westafricatech.com'
-        },{
-            key:'offlineName',
-            value:'2020中国机电产品（尼日利亚）展览会官网'
-        },{
-            key:'yearMonthDay',
-            value:yearMonthDay
-        },{
-            key:'onlineUrl',
-            value:yearMonthDay+'.matchupexpo.com'
-        },{
-            key:'all_title',
-            value:'2019 Premium Mechatronic Brands China in Nigeria (Co-located with Lagos International Trade Fair)'
-        },{
-            key:'title',
-            value:'2020浙江出口网上交易会（尼日利亚站-工具专场）'
-        },{
-            key:'titleEn',
-            value:'2020 Zhejiang Export Online Fair (Nigeria-Tools)'
-        },{
-            key:'startDay',
-            value:'2020/5/25'
-        },{
-            key:'timeDuration',
-            value:5
-        },{
-            key:'date',
-            value:'5月25-29日'
-        },{
-            key:'dateEn',
-            value:'May 25-29'
-        }
-    ]
+    let yearMonthDay = 'nigeria-fabric-doczj'
+    let obj = config[yearMonthDay]
 
     let filePath = './routes/uaecEmail/'
     let fileArr = ['all.html', 'PushBuyer.html', 'CheckedSupplier.html', 'Supplier.html', 'SupplierReceived.html', 'Buyer.html', 'BuyerRecived.html']

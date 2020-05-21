@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial','Microsoft Yahei';
+}
+ul,li{
+    list-style: none;
+}
+.mail{
+    position:relative;
+    margin: 0 auto;
+    width:1000px;
+    height:1200px;
+
+}
+.buyer{
+    background: url('http://www.matchupexpo.com/config/image/buyer.jpg') no-repeat;
+}
+.buyerReceive{
+    background: url('http://www.matchupexpo.com/config/image/buyerReceive.jpg') no-repeat;
+}
+.supply{
+    background: url('http://www.matchupexpo.com/config/image/supply.jpg') no-repeat;
+}
+.supplyReceive{
+    background: url('http://www.matchupexpo.com/config/image/supplyReceive.jpg') no-repeat;
+}
+.mail .input{
+    position:absolute;
+    left:50%;
+    /* overflow:hidden; */
+    height:20px;
+    line-height: 20px;
+    text-align: center;
+    word-break: break-all;
+    color:#454545;
+    font-size: 16px;
+    /* background:#f00; */
+}
+.mail .input a{
+    display: inline-block;
+    line-height:1.5;
+    color:#62b490;
+}
+.mail .input a:hover{color:#f92402;}
+.mail .name{
+    width:128px;
+    top:385px;
+    margin-left:-239px;
+}
+.mail .info{
+    width:584px;
+    top:538px;
+    margin-left:-231px;
+}
+.mail .time{
+    width:385px;
+    top:573px;
+    margin-left:-25px;
+}
+.mail .place{
+    width:477px;
+    top:609px;
+    margin-left:-124px;
+}
+.mail .date{
+    top:805px;
+    margin-left:-357px;
+    width:94px;
+    height:50px;
+    line-height: 50px;
+}
+.mail .time2{
+    top:805px;
+    margin-left:-254px;
+    width:119px;
+    height:50px;
+    line-height: 50px;
+}
+.mail .arrangement{
+    top:826px;
+    margin-left:-124px;
+    width:237px;
+    height:25px;
+}
+.mail .mainRoom{
+    top:745px;
+    margin-left:125px;
+    width:230px;
+    height:50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mail .room{
+    top:805px;
+    margin-left:125px;
+    width:230px;
+    height:50px;
+    line-height: 50px;
+}
+
+.supply .name,.supplyReceive .name{
+    top:375px;
+    margin-left:-307px;
+}
+.supply .info,.supplyReceive .info{
+    top: 498px;
+    margin-left: -151px;
+    width:507px;
+}
+.supply .time,.supplyReceive .time{
+    top:534px;
+    margin-left:-123px;
+    width:373px;
+}
+.supplyReceive .time{
+    margin-left:-90px;
+    width:340px;
+}
+.supply .place,.supplyReceive .place{
+    top:571px;
+    margin-left:-283px;
+    width:579px;
+}
+.supply .date,.supplyReceive .date{
+    top:762px;
+    margin-left:-362px;
+}
+.supply .time2,.supplyReceive .time2{
+    top:762px;
+    margin-left:-259px;
+}
+.supply .arrangement,.supplyReceive .arrangement{
+    top:762px;
+    margin-left:-110px;
+    width: 210px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.supply .mainRoom,.supplyReceive .mainRoom{
+    top:702px;
+    margin-left:120px;
+}
+.supply .room,.supplyReceive .room{
+    top:762px;
+    margin-left:120px;
+}
