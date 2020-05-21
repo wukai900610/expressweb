@@ -3,7 +3,7 @@ var router = express.Router();
 var fs = require('fs');
 
 router.get('/', function(req, res, next) {
-    fs.readFile('./routes/parseFile/c.txt', 'utf8', function(err, data) {
+    fs.readFile('./routes/parseFile/ccc.txt', 'utf8', function(err, data) {
         var files = data.split(/\r\n/g)
         var file = files.filter(function(item){
             return item

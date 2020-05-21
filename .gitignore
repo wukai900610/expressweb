@@ -8,3 +8,5 @@ yarn-error.log*
 selenium-debug.log
 upload/
 dist/
+routes/parseFile/ccc.txt
+routes/parseFile/cFormat.json
