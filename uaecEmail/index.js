@@ -2,7 +2,7 @@ var fs = require('fs');
 var util = require('../util/util.js');
 var config = require('./config.js');
 
-let yearMonthDay = 'nigeria-fabric-doczj'
+let yearMonthDay = 'nigeria-wirecable-doczj'
 let obj = config[yearMonthDay]
 
 let filePath = './uaecEmail/'
@@ -28,6 +28,7 @@ function doFile() {
                 console.log('文件'+fileIndex+'操作成功');
                 fileIndex++;
                 doFile()
+
                 if(fileIndex == fileArr.length-1){
                     console.log('ok:'+fileIndex);
                 }
