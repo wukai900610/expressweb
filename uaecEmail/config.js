@@ -359,4 +359,148 @@ module.exports = {
             value:'Jun. 18-22'
         }
     ],
+    'nigeria-upholstery-doczj':[// 17
+        {
+            key:'offlineUrl',
+            value:'www.nigeriatex.com'
+        },{
+            key:'offlineName',
+            value:'尼日利亚国际纺织装饰面料博览会官网'
+        },{
+            key:'yearMonthDay',
+            value:'nigeria-upholstery-doczj'
+        },{
+            key:'onlineUrl',
+            value:'nigeria-upholstery-doczj.matchupexpo.com'
+        },{
+            key:'all_title',
+            value:'2019 NigeriaTex (Co-located with Lagos International Trade Fair)'
+        },{
+            key:'title',
+            value:'2020浙江出口网上交易会（尼日利亚站-装饰面料专场）'
+        },{
+            key:'titleEn',
+            value:'2020 Zhejiang Export Online Fair (Nigeria-Upholstery)'
+        },{
+            key:'startDay',
+            value:'2020/6/19'
+        },{
+            key:'timeDuration',
+            value:5
+        },{
+            key:'date',
+            value:'6月19-23日'
+        },{
+            key:'dateEn',
+            value:'Jun. 19-23'
+        }
+    ],
+    'nigeria-lighting-doczj':[// 18
+        {
+            key:'offlineUrl',
+            value:'www.westafricatech.com'
+        },{
+            key:'offlineName',
+            value:'中国机电产品（尼日利亚）展览会官网'
+        },{
+            key:'yearMonthDay',
+            value:'nigeria-lighting-doczj'
+        },{
+            key:'onlineUrl',
+            value:'nigeria-lighting-doczj.matchupexpo.com'
+        },{
+            key:'all_title',
+            value:'2019 Premium Mechatronic Brands China (Co-located with Lagos International Trade Fair)'
+        },{
+            key:'title',
+            value:'2020浙江出口网上交易会（尼日利亚站-灯具照明专场）'
+        },{
+            key:'titleEn',
+            value:'2020 Zhejiang Export Online Fair (Nigeria-Lighting)'
+        },{
+            key:'startDay',
+            value:'2020/6/22'
+        },{
+            key:'timeDuration',
+            value:5
+        },{
+            key:'date',
+            value:'6月22-26日'
+        },{
+            key:'dateEn',
+            value:'Jun. 22-26'
+        }
+    ],
+    'nigeria-fishery-doczj':[// 19
+        {
+            key:'offlineUrl',
+            value:'www.westafricatech.com'
+        },{
+            key:'offlineName',
+            value:'中国机电产品（尼日利亚）展览会官网'
+        },{
+            key:'yearMonthDay',
+            value:'nigeria-fishery-doczj'
+        },{
+            key:'onlineUrl',
+            value:'nigeria-fishery-doczj.matchupexpo.com'
+        },{
+            key:'all_title',
+            value:'2019 Premium Mechatronic Brands China (Co-located with Lagos International Trade Fair)'
+        },{
+            key:'title',
+            value:'2020浙江出口网上交易会（尼日利亚站-渔业专场）'
+        },{
+            key:'titleEn',
+            value:'2020 Zhejiang Export Online Fair (Nigeria-Fishery)'
+        },{
+            key:'startDay',
+            value:'2020/6/29'
+        },{
+            key:'timeDuration',
+            value:5
+        },{
+            key:'date',
+            value:'6月29-7月03日'
+        },{
+            key:'dateEn',
+            value:'Jun. 29- July 3'
+        }
+    ],
+    'nigeria-hometextile-doczj':[// 20
+        {
+            key:'offlineUrl',
+            value:'www.nigeriatex.com'
+        },{
+            key:'offlineName',
+            value:'尼日利亚国际纺织家纺博览会官网'
+        },{
+            key:'yearMonthDay',
+            value:'nigeria-hometextile-doczj'
+        },{
+            key:'onlineUrl',
+            value:'nigeria-hometextile-doczj.matchupexpo.com'
+        },{
+            key:'all_title',
+            value:'2019 NigeriaTex (Co-located with Lagos International Trade Fair)'
+        },{
+            key:'title',
+            value:'2020浙江出口网上交易会（尼日利亚站-家纺专场）'
+        },{
+            key:'titleEn',
+            value:'2020 Zhejiang Export Online Fair (Nigeria-Hometextile)'
+        },{
+            key:'startDay',
+            value:'2020/6/30'
+        },{
+            key:'timeDuration',
+            value:5
+        },{
+            key:'date',
+            value:'6月30-7月04日'
+        },{
+            key:'dateEn',
+            value:'Jun. 30- July 4'
+        }
+    ],
 };
