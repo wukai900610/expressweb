@@ -2,7 +2,7 @@ var fs = require('fs');
 var util = require('../util/util.js');
 var config = require('./config.js');
 
-let yearMonthDay = 'nigeria-wirecable-doczj'
+let yearMonthDay = 'nigeria-foodagricultural-doczj'
 let obj = config[yearMonthDay]
 
 let filePath = './uaecEmail/'
