@@ -251,6 +251,42 @@ module.exports = {
             value:'Jun. 9-13'
         }
     ],
+    '20200507':[// 贸促会10号
+        {
+            key:'offlineUrl',
+            value:'www.nigeriatex.com'
+        },{
+            key:'offlineName',
+            value:'尼日利亚国际纺织服装博览会官网'
+        },{
+            key:'yearMonthDay',
+            value:'20200507'
+        },{
+            key:'onlineUrl',
+            value:'www.matchupexpo.com'
+        },{
+            key:'all_title',
+            value:'2019 NigeriaTex (Co-located with Lagos International Trade Fair)'
+        },{
+            key:'title',
+            value:'2020浙江名品纺织行业（尼日利亚）线上展览会(家纺专场)'
+        },{
+            key:'titleEn',
+            value:'2020 Zhejiang-Nigeria Textiles Online Expo (Home Textile Sourcing)'
+        },{
+            key:'startDay',
+            value:'2020/6/10'
+        },{
+            key:'timeDuration',
+            value:3
+        },{
+            key:'date',
+            value:'6月10-12日'
+        },{
+            key:'dateEn',
+            value:'Jun. 10-12'
+        }
+    ],
     'nigeria-garmentaccessories-doczj':[// 14
         {
             key:'offlineUrl',
