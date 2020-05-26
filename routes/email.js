@@ -4,23 +4,26 @@ var router = express.Router();
 
 router.get('/', function(req, res, next) {
     const smtpTransport = nodemailer.createTransport({
-        // service: 'smtp.qq.com',
-        service: 'smtp.126.com',
+        host: 'smtp.qq.com',
+        // host: 'smtp.126.com',
         port:465,
         secure:true,
         auth: {
-            // user: '744982965@qq.com',
+            user: '744982965@qq.com',
             // pass: 'oyyzmsjrrooibcjd',//注：此处为授权码，并非邮箱密码
-            user: 'wukai900610@126.com',
-            pass: 'GPVSNRTZSBSYKWIB'//注：此处为授权码，并非邮箱密码
+            pass: 'ooqjetgntdsubfga',//注：此处为授权码，并非邮箱密码
+            // user: 'wukai900610@126.com',
+            // pass: 'GPVSNRTZSBSYKWIB'//注：此处为授权码，并非邮箱密码
         }
     });
 
     smtpTransport.sendMail({
-        from : 'wukai900610@126.com',//发件人邮箱
-        to : '744982965@qq.com',//收件人邮箱，多个邮箱地址间用','隔开
+        from : '744982965@qq.com',//发件人邮箱
+        to : 'wuk@uaec-expo.com',//收件人邮箱，多个邮箱地址间用','隔开
+        // to : 'wukai900610@126.com',//收件人邮箱，多个邮箱地址间用','隔开
         subject : 'title',//邮件主题
-        text: 'Hi!'//text和html两者只支持一种
+        html: '<strong>Hi!</strong>'//text和html两者只支持一种
+        // text: 'Hi!'//text和html两者只支持一种
     }, function(err, d) {
         res.send({
             err:err,
