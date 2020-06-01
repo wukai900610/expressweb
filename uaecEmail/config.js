@@ -236,7 +236,7 @@ module.exports = {
             value:'2020浙江出口网上交易会（尼日利亚站-建材专场）'
         },{
             key:'titleEn',
-            value:'2020 Zhejiang Export Online Fair (Nigeria-Kitchenware)'
+            value:'2020 Zhejiang Export Online Fair (Nigeria-Building Materials)'
         },{
             key:'startDay',
             value:'2020/6/9'
