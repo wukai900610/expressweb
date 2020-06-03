@@ -1,0 +1,123 @@
+extends layout
+
+block content
+    style.
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font: 13px Helvetica, Arial;
+        }
+
+        form {
+            background: #000;
+            padding: 3px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        form input {
+            border: 0;
+            padding: 10px;
+            width: 90%;
+            margin-right: .5%;
+        }
+
+        form button {
+            width: 9%;
+            background: rgb(130, 224, 255);
+            border: none;
+            padding: 10px;
+        }
+
+        #messages {
+            list-style-type: none;
+            margin: 0;
+            padding: 10px 10px 50px 10px;
+        }
+
+        #messages li {
+            padding: 5px 10px;
+        }
+
+        #messages li:nth-child(odd) {
+            background: #eee;
+        }
+    <ul id="messages"></ul>
+    <form action="">
+        <input id="m" autocomplete="off" /><button>发送</button>
+    </form>
+    script(src='https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js')
+    script(src='/socket.io/socket.io.js')
+    script.
+        $(function(){
+            // ie8支持map
+            if (typeof Array.prototype.map != "function")
+            {
+                Array.prototype.map = function(fn, context)
+                {
+                    var arr = [];
+                    if (typeof fn === "function")
+                    {
+                        for (var k = 0, length = this.length; k < length; k++)
+                        {
+                            arr.push(fn.call(context, this[k], k, this));
+                        }
+                    }
+                    return arr;
+                };
+            }
+        
+            var socket = io();
+        
+            var name = prompt("请输入你的昵称：");
+            if(name){
+                document.title = name + "的群聊-联亚匿名聊天系统";
+        
+                //发送昵称给后端
+                socket.emit("join", name);
+        
+                // 获取历史消息
+                $.ajax({
+                    url:'/chat/history/get',
+                    type:'get',
+                    success:function (res) {
+                        res.map(function (item) {
+                            addLine(item.name + ':' + item.msg);
+                        });
+                    }
+                })
+            }
+        
+            //收到服务器发来的join事件时
+            socket.on("join", function(user) {
+                if(user && user != undefined){
+                    addLine(user + " 加入了群聊")
+                }
+            });
+        
+            function addLine(msg) {
+                $('#messages').append($('<li>').text(msg));
+            }
+        
+            // 发送消息
+            $('form').submit(function() {
+                var msg = $("#m").val();
+        
+                socket.emit("message", {
+                    msg: msg,
+                    name: name
+                }); //将消息发送给服务器
+                $("#m").val("");
+                return false;
+            });
+        
+            // 接收消息
+            socket.on("message", function(data) {
+                addLine(data.name + ':' + data.msg);
+            });
+        })

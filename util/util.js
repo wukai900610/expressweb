@@ -5,6 +5,7 @@ var fs = require('fs');
 
 let storageData = {};
 const util = {
+    history:[],
     mkdir:function (dir) {
         if(!fs.existsSync(dir)){
             fs.mkdirSync(dir)

@@ -37,6 +37,9 @@ app.use('/trip', require('./routes/trip'));
 app.use('/paseFile', require('./routes/parseFile/'));//解析文件
 app.use('/email', require('./routes/email'));
 
+app.use('/chat/history/get', require('./routes/chat/history'));
+app.use('/chat', require('./routes/chat/'));
+
 // other
 app.use('/api/getIndex', require('./routes/api/getIndex'));
 app.use('/api/getEstate', require('./routes/api/getEstate'));
