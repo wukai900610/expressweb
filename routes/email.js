@@ -19,8 +19,9 @@ router.get('/', function(req, res, next) {
 
     smtpTransport.sendMail({
         from : '744982965@qq.com',//发件人邮箱
-        to : 'wuk@uaec-expo.com',//收件人邮箱，多个邮箱地址间用','隔开
+        // to : 'wuk@uaec-expo.com',//收件人邮箱，多个邮箱地址间用','隔开
         // to : 'wukai900610@126.com',//收件人邮箱，多个邮箱地址间用','隔开
+        to : 'wukai900610@gmail.com',//收件人邮箱，多个邮箱地址间用','隔开
         subject : 'title',//邮件主题
         html: '<strong>Hi!</strong>'//text和html两者只支持一种
         // text: 'Hi!'//text和html两者只支持一种
