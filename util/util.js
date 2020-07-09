@@ -61,7 +61,7 @@ const util = {
     },
     myHttps: function(url, config) {
         let options = Object.assign({
-            method: 'get'
+            method: 'get',
         }, config);
 
         let promise = new Promise(function(resolve, rejecte) {
@@ -69,13 +69,14 @@ const util = {
                 res.setEncoding('utf8');
                 let finalData = '';
                 res.on('data', (d) => {
+                    console.error(d);
                     finalData += d;
                 });
                 res.on('end', (d) => {
                     resolve(finalData.toString())
                 });
             }).on('error', (e) => {
-                console.error(e);
+                // console.error(e);
             });
             req.end();
         })

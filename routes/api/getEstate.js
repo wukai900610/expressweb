@@ -30,7 +30,7 @@ async function getList(kw) {
             adress:adress.trim().split('\n').map(item=>{return item.trim()}),
             price:price,
             unitPrice:unitPrice,
-        })
+        });
     });
     data = data.concat(itemData);
     page++;
