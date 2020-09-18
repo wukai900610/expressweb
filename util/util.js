@@ -13,7 +13,7 @@ const util = {
     },
     upFile: function(req, res, next, callback) {
         var form = new multiparty.Form();
-        var UPLOAD_DIR = './upload/'
+        var UPLOAD_DIR = './public/upload/'
         form.parse(req, function(err, fields, files) {
             // console.log(files);
             var filesTemp = JSON.stringify(files, null, 2);
@@ -24,7 +24,8 @@ const util = {
                 var file = files.uploadFile[0];
                 var uploadedPath = file.path;
                 util.mkdir(UPLOAD_DIR);
-                var dstPath = UPLOAD_DIR + file.originalFilename;
+                var cbFileName = new Date().getTime() + file.originalFilename;
+                var dstPath = UPLOAD_DIR + cbFileName;
                 //重命名为真实文件名
                 var readStream = fs.createReadStream(uploadedPath);
                 var writeStream = fs.createWriteStream(dstPath);
@@ -32,7 +33,7 @@ const util = {
                 readStream.on('end', function() {
                     fs.unlinkSync(uploadedPath);
 
-                    callback(res);
+                    callback(res,'/upload/'+ cbFileName);
                 });
             }
         });
