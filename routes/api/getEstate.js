@@ -7,9 +7,9 @@ let data = [];
 let page = 1;
 
 async function getList(kw) {
-    // let result=await util.myHttps('https://nanjing.anjuke.com/sale/jiangninga/p'+page+'-rd1-t25/#filtersort?kw='+kw);
+    // let result=await util.myRequest('https://nanjing.anjuke.com/sale/jiangninga/p'+page+'-rd1-t25/#filtersort?kw='+kw);
     let url = 'https://nanjing.anjuke.com/sale/rd1/?from=zjsr&kw=' + encodeURI(kw);
-    let result=await util.myHttps(url);
+    let result=await util.myRequest(url);
     let $ = cheerio.load(result);
     let itemData = [];
     $('.houselist-mod-new .list-item').each(function () {
@@ -30,9 +30,10 @@ async function getList(kw) {
             adress:adress.trim().split('\n').map(item=>{return item.trim()}),
             price:price,
             unitPrice:unitPrice,
-        });
+        })
     });
     data = data.concat(itemData);
+
     page++;
 
     // if(page<=1){
