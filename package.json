@@ -21,6 +21,6 @@
     "nodemailer": "^6.4.6",
     "pug": "2.0.0-beta11",
     "qs": "^6.9.4",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.4.0"
   }
 }
